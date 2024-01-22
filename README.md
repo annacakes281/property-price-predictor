@@ -115,18 +115,60 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Rationale Business Requirement Map
-The rationale to map the business requirements to the Data Visualisations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+* Business Requirement 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+    * We will perform data visualisation and a correlation study to answer this.
+    * The correlation study (using pearson and spearman) will help us better understand how the variables are correlated to Sale price.
+    * We will also plot the main variables against Sale price to visualise the insights.
 
+* Business Requirement 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+    * We want to predict whether sale price will increase based on correlated or best variables.
+    * For this we will build a regressor model and analyse the best variables to use.
 
 ## ML Business Case
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Predict Sales
+* **What are the business requirements?**
+    * The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualizations of the correlated variables against the sale price.
+    * The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
+
+* **Is there any business requirement that can be answered with conventional data analysis?**
+    * Business requirement 1 can be answered with conventional data analysis to find correlated attributes to sale prices.
+
+* **Does the client need a dashboard or an API endpoint?**
+    * The client has requested a Streamlit dashboard
+
+* **What does the client consider as a successful project outcome?**
+    * A study that shows the most relevant variables that are correlated to sale price.
+    * A capability to predict the sale price of the 4 inherited properties, as well as other properties within *Ames, Iowa*.
+
+* **Can you break down the project into Epics and User Stories?**
+    * Information gathering and data collection.
+    * Data visualization, cleaning, and preparation.
+    * Model training, optimization and validation.
+    * Dashboard planning, designing, and development.
+    * Dashboard deployment and release.*
+
+* **Ethical or Privacy concerns?**
+    * No, as the client has found a public dataset.
+
+* Does the data suggest a particular model?
+    * From the PPS study, the data suggested using a regressor model where the target is sale price.
+
+* **What are the model's inputs and intended outputs?**
+    * Input: property attribute information.
+    * Output: predicted sale price.
+
+* **What are the criteria for the performance goal of the predictions?**
+    * It was agreed upon with the client that an R2 score of at least 0.75 will be required on both train and test sets.
+
+* **How will the client benefit?**
+    * The client will be able to maximise the sales price for the inherited properties.
+    * The client will be able to view the sales price for other properties within the area by inputting the variables.
 
 
 ## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
-
+The dashboard will consist of five pages:
+1. Project Summary:
+    * 
 
 
 ## Unfixed Bugs
