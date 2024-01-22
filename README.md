@@ -1,56 +1,52 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# PPP: Property Price Predictor
 
-## Codeanywhere Template Instructions
+### About
+Propery Price Predictor (PPP) is a Machine Learning tool that can help users to predict the sale prices of properties by taking the properties features as inputs. Currently this tool will only predict prices on properties within *Ames, Iowa*.
 
-Welcome,
+The app was created to help the client:
+* View how the attributes of a property correlate to the sale price.
+* Have the ability to predict sale prices for specific houses, and other properties across Ames.
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+# Table of Contents
+<ul>
+<li><a href="#dataset-content">Dataset Content</a></li>
+     <ul>
+        <li><a href="#initial-observations">Initial Observations</a></li>
+        <li><a href="#possible-limitations">Possible Limitations</a></li>
+    </ul>
+<li><a href="#business-requirements">Business Requirements</a></li>
+<li><a href="#hypothesis-and-validation">Hypothesis and Validation</a></li>
+    <ul>
+        <li><a href="#hypothesis-one">Hypothesis One</a></li>
+        <li><a href="#hypothesis-two">Hypothesis Two</a></li>
+        <li><a href="#hypothesis-three">Hypothesis Three</a></li>
+    </ul>
+<li><a href="#rationale-map">Rationale Business Requirement Map</a></li>
+<li><a href="#ml-business-case">ML Business Case</a></li>
+<li><a href="#dashboard-design">Dashboard Design</a></li>
+    <ul>
+        <li><a href="#project-summary">Project Summary</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+<li><a href="#unfixed-bugs">Unfixed Bugs</a></li>
+<li><a href="#deployment">Deployment</a></li>
+    <ul>
+        <li><a href="#heroku">Heroku</a></li>
+        <li><a href="#main-data-analysis-and-ml-libs">Main Data Analysis and Machine Learning Libraries</a></li>
+    </ul>
+<li><a href="#credits">Credits</a></li>
+    <ul>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#acknowledgments">Ackowledgments</a></li>
+    </ul>
+</ul>
 
-You can safely delete the Codeanywhere Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Codeanywhere Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use. 
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into <a href="https://app.codeanywhere.com/" target="_blank" rel="noreferrer">CodeAnywhere</a> with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
-
-1. In the terminal type <code>pip3 install jupyter</code>
-
-1. In the terminal type <code>jupyter notebook --NotebookApp.token='' --NotebookApp.password=''</code> to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
-
-1. Click the button Not Trusted and choose Trust.
-
-Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use <code>! python --version</code> in a notebook code cell.
-
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
 ## Dataset Content
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data), provided by the client. 
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
@@ -80,8 +76,13 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
+### Initial Observations
+* There is a lot of attributes that may have a large degree of inter-correlation. The best variables will need to be determined in order to properly proceed with the dataset, and use transformers where necessary.
 
+### Possible Limitations
+* The data lacks features that represent the location of the property, e.g. close to a school, which could have an imopact on sale price.
 
+Although a ML model can be created, it may not be adequate at predicting propery prices within *Ames* without these extra variables that can influence sale price; with these features the performance would, in theory be higher.
 
 
 ## Business Requirements
@@ -93,11 +94,28 @@ Although your friend has an excellent understanding of property prices in her ow
 * 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
 
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them).
+## Hypothesis and Validation
+### Hypothesis One
+
+* It is suspected that the *size* of a property will have an impact on *sale price*, meaning that the larger a propery is overall, the more it will sell for:
+    * To validate this, we will do an correlation study, as well assess the best features against sales price.
+        * **This hypothesis was confirmed during the correlation study, as well as during assessing the best features**
+
+### Hypothesis Two
+
+* It is suspected that the higher the *quality/finish* of a property will have an impact on *sale price*, meaning that the higher quality homes will overall sell for higher:
+    * To validate this, we will do an correlation study, as well assess the best features against sales price.
+        * **This hypothesis was confirmed during the correlation study, as well as during assessing the best features**
+
+### Hypothesis Three
+
+* It is suspected that the *year* of a property will have an impact on *sale price*, meaning that the newly built properties are more likely to sell for more:
+    * To validate this, we will do an correlation study, as well assess the best features against sales price.
+        * **This hypothesis was confirmed during the correlation study, as well as during assessing the best features**
 
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+## Rationale Business Requirement Map
+The rationale to map the business requirements to the Data Visualisations and ML tasks
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
 
 
