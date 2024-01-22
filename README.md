@@ -23,13 +23,18 @@ The app was created to help the client:
     </ul>
 <li><a href="#rationale-map">Rationale Business Requirement Map</a></li>
 <li><a href="#ml-business-case">ML Business Case</a></li>
+    <ul>
+        <li><a href="#milestones">Milestones</a></li>
+        <li><a href="#user-story-and-epics">User Story and Epics</a></li>
+        <li><a href="#moscow-prioritisation">MoSCoW Prioritisation</a></li>
+    </ul>
 <li><a href="#dashboard-design">Dashboard Design</a></li>
     <ul>
         <li><a href="#project-summary">Project Summary</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        <li><a href="#hypothesis-and-validation">Hypothesis and Validation</a></li>
+        <li><a href="#property-sale-price-study">Property Sale Price Study</a></li>
+        <li><a href="#predict-sales">Predict Sales</a></li>
+        <li><a href="#ml-model">ML Model</a></li>
     </ul>
 <li><a href="#unfixed-bugs">Unfixed Bugs</a></li>
 <li><a href="#deployment">Deployment</a></li>
@@ -164,52 +169,123 @@ Although your friend has an excellent understanding of property prices in her ow
     * The client will be able to maximise the sales price for the inherited properties.
     * The client will be able to view the sales price for other properties within the area by inputting the variables.
 
+### Milestones
+8 milestones were created for this project:
+
+
+
+View [Milestones](https://github.com/annacakes281/heritage-housing-issues/milestones?state=closed)
+
+### User Stories and Epics
+
+View [User Stories and Epics](https://github.com/users/annacakes281/projects/5/views/1)
+
+### MoSCoW Prioritisation
+
+View [MoSCoW Prioritisation](https://github.com/users/annacakes281/projects/6/views/1)
 
 ## Dashboard Design
 The dashboard will consist of five pages:
 1. Project Summary:
-    * 
+    * Section - breif description of the project 
+    * Section - dataset description
+    * Widget checkbox - to view the dataset table
+    * Link to README
+    * Section - business Requirements
+
+    **PHOTO**
+
+2. Hypothesis and Validation
+    * Section - the hypothesis and validation
+
+3. Propery Sale Price Study:
+    * Section - sale price study and business requirement 1
+    * Widget checkbox - view dataset
+    * Section - correlation study variables and findings
+    * Widget checkbox - graphs from correlation study
+    * Section - PPS study findings
+    * Widget checkbox - heatmap from pps study
+
+     **PHOTO**
+
+4. Predict Sales:
+    * Section - business requirement 2
+    * Section - R2 Score performance
+    * Widget checkbox - inherited properties predicted prices
+    * Widget checkbox - allows users to input selected variables to predict price and output
+
+    **PHOTO**
+
+5. ML Model:
+    * Section - about the regressor model and R2 score
+    * Section - pipeline steps
+    * TBD - best features and importance
+    * TBD - pipeline performance train set
+    * TBD - pipeline performance test set
+
+    **PHOTO**
 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* TBD
 
 ## Deployment
 ### Heroku
 
 * The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+* Run: pip3 freeze > requirements.txt
+* Ensure: Procfile says <code>web: sh setup.sh && streamlit run app.py</code>
+* Runtime: python-3.8.17
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+* The project was deployed to Heroku using the following steps:
+
+1. Log in to Heroku with the CLI
+2. Create the app with <code> heroku create --region eu</code>
+3. set: <code>heroku stack:set heroku-20</code>
+4. Using the Heroku website, go to the deploy tab and connect the repo
+5. Deploy from main branch, it will build the app, if all if successful click the button to Open App.
+
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+Below are the libraries that I used for the project, taken from *requirements.txt*
 
+* feature-engine==1.6.2 - to perform feature engineering
+* matplotlib==3.7.4 - to produce plot charts
+* matplotlib-inline==0.1.6 - so that charts would appear
+* numpy==1.24.4 - for analysis
+* pandas==1.5.3 - for analysis
+* plotly==5.18.0 - to plot charts
+* ppscore==1.3.0 - to conduct a pps study
+* scikit-learn==1.3.2 - for feature engineering
+* seaborn==0.13.1 - for analysis
+
+To create the dashboard:
+* protobuf==3.20.1
+* streamlit==1.30.0
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The projects steps were dependant on following the Code Institue [Churnometer](https://github.com/Code-Institute-Solutions/churnometer) practice project
+- I relied on the following Code Institue lessons for code as well:
+    * [Feature Engineering: Handle Missing Data](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/bb0bf41fb8744b46813c0f52a74b9b11/)
+    * [Feature Engineering: Categorical Encoding](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/bb0bf41fb8744b46813c0f52a74b9b11/)
+    * [Feature Engineering: Numerical Transformation](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/bb0bf41fb8744b46813c0f52a74b9b11/)
+    * [Feature Engineering: Variable Discritisation](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/bb0bf41fb8744b46813c0f52a74b9b11/)
+    * [Feature Engineering: Handle Outlier](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/bb0bf41fb8744b46813c0f52a74b9b11/)
+    * [Feature Engineering: Drop Features](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/bb0bf41fb8744b46813c0f52a74b9b11/)
+    * [SciKit-Learn: Cross Validation](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/f3d518ff775b4545adac7642fa290993/)
 
-### Media
+- I also turned to some previous students work when I was stuck on how to proceed:
+    * [Knutinator](https://github.com/knutinator/heritage-housing/tree/main)
+    * [URiem](https://github.com/URiem/heritage-housing-PP5/tree/main)
 
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
+- To help analyse the histograms and q-q plots I used the following:
+    * [Q-Q Plots](https://www.ucd.ie/ecomodel/Resources/QQplots_WebVersion.html#:~:text=You%20can%20start%20to%20understand,on%20the%20QQ%2Dplot)
+    * [Histogram](https://www.labxchange.org/library/items/lb:LabXchange:10d3270e:html:1#:~:text=A%20histogram%20shows%20how%20frequently,to%20be%20discrete%20positive%20integers.)
 
 
-
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
+## Acknowledgements
+* I would like to thank my mentor, Precious, for his support for when I decided to change my idea due to the data not being sufficent enough and for answering all my questions when needed.
 
