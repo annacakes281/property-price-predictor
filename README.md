@@ -188,19 +188,25 @@ View [MoSCoW Prioritisation](https://github.com/users/annacakes281/projects/6/vi
 The dashboard will consist of six pages:
 1. Homepage:
     * Section - welcome message and what can be found 
-    * Sidebar - access to other pages
+    * Sidebar - access to other pages, avaliable on all pages
+
+   <img src="readme_images/homepage.png" style="width:1000px;">
 
 2. Project Summary:
-    * Section - breif description of the project 
-    * Section - dataset description
-    * Widget checkbox - to view the dataset table
+    * Section - background information
+    * Section - quick summary
+    * Section - about dataset
+    * Widget checkbox - to view the dataset table, the column sizes can be changed
     * Link to README
     * Section - business Requirements
 
-    **PHOTO**
+    <img src="readme_images/project_summary.png" style="height:500px;">
+    <img src="readme_images/view_dataset_sum.png" style="height:500px;">
 
 3. Hypothesis and Validation
     * Section - the hypothesis and validation
+
+    <img src="readme_images/hypothesis_validation.png" style="height:500px;">
 
 4. Propery Sale Price Study:
     * Section - sale price study and business requirement 1
@@ -291,6 +297,10 @@ To create the dashboard:
 - To create the Streamlit app I used the following video tutorial:
     * Coding is fun [How to create a Streamlit Multi-page Web App](https://www.youtube.com/watch?v=YClmpnpszq8)
 
+- [App Icons](https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/) were found from the streamlit page.
+
+- To create the dataset table I used the following website:
+    * [st.data_editor](https://docs.streamlit.io/library/api-reference/data/st.data_editor)
 
 ## Acknowledgements
 * I would like to thank my mentor, Precious, for his support for when I decided to change my idea due to the data not being sufficent enough and for answering all my questions when needed.
