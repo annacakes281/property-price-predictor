@@ -185,8 +185,12 @@ View [User Stories and Epics](https://github.com/users/annacakes281/projects/5/v
 View [MoSCoW Prioritisation](https://github.com/users/annacakes281/projects/6/views/1)
 
 ## Dashboard Design
-The dashboard will consist of five pages:
-1. Project Summary:
+The dashboard will consist of six pages:
+1. Homepage:
+    * Section - welcome message and what can be found 
+    * Sidebar - access to other pages
+
+2. Project Summary:
     * Section - breif description of the project 
     * Section - dataset description
     * Widget checkbox - to view the dataset table
@@ -195,10 +199,10 @@ The dashboard will consist of five pages:
 
     **PHOTO**
 
-2. Hypothesis and Validation
+3. Hypothesis and Validation
     * Section - the hypothesis and validation
 
-3. Propery Sale Price Study:
+4. Propery Sale Price Study:
     * Section - sale price study and business requirement 1
     * Widget checkbox - view dataset
     * Section - correlation study variables and findings
@@ -208,7 +212,7 @@ The dashboard will consist of five pages:
 
      **PHOTO**
 
-4. Predict Sales:
+5. Sales Predictor:
     * Section - business requirement 2
     * Section - R2 Score performance
     * Widget checkbox - inherited properties predicted prices
@@ -216,7 +220,7 @@ The dashboard will consist of five pages:
 
     **PHOTO**
 
-5. ML Model:
+6. ML Model:
     * Section - about the regressor model and R2 score
     * Section - pipeline steps
     * TBD - best features and importance
@@ -232,8 +236,7 @@ The dashboard will consist of five pages:
 ## Deployment
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Run: pip3 freeze > requirements.txt
+* The App live link is: https://YOUR_APP_NAME.herokuapp.com/
 * Ensure: Procfile says <code>web: sh setup.sh && streamlit run app.py</code>
 * Runtime: python-3.8.17
 
@@ -284,6 +287,9 @@ To create the dashboard:
 - To help analyse the histograms and q-q plots I used the following:
     * [Q-Q Plots](https://www.ucd.ie/ecomodel/Resources/QQplots_WebVersion.html#:~:text=You%20can%20start%20to%20understand,on%20the%20QQ%2Dplot)
     * [Histogram](https://www.labxchange.org/library/items/lb:LabXchange:10d3270e:html:1#:~:text=A%20histogram%20shows%20how%20frequently,to%20be%20discrete%20positive%20integers.)
+
+- To create the Streamlit app I used the following video tutorial:
+    * Coding is fun [How to create a Streamlit Multi-page Web App](https://www.youtube.com/watch?v=YClmpnpszq8)
 
 
 ## Acknowledgements
