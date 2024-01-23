@@ -19,7 +19,7 @@ def page_sale_price_study():
                     'YearBuilt', 'GarageArea','GrLivArea']
 
     st.info(
-        f"**House Price Study**"
+        f"**House Price Study**\n\n"
         f"*Business Requirement 1*:\n"
         f"* 1 - The client is interested in discovering how the house attributes\n"
         f"correlate with the sale price.\n"
@@ -52,8 +52,20 @@ def page_sale_price_study():
     if st.checkbox("Sale Price Study Visulations"):
         sale_price_per_var(df_eda, vars_to_study)
 
+        # copied from sale price study notebook
+        st.write(
+            f"Findings:\n"
+            f"* The correlation analysis suggests that the the ground floor living area\n"
+            f"(GrLivArea), first floor area (1stFlrSF), basement (TotalBsmtSF),\n"
+            f"and garage area (GarageArea) strongly influence the SalePrice of a house.\n"
+            f"* The analysis also suggets that the year of the house (YearBuilt),\n"
+            f"and quality of materials used/finishes (OverallQual)\n"
+            f"have a moderate influence on the (SalePrice) of a house.\n\n"
+            f"**These findings match our hypothesis we made.**"
+        )
+
 # cache decoder
-@st.cache_data 
+@st.cache_data
 def sale_price_per_var(df_eda, vars_to_study):
     # function based on sale price study notebook
     target_var = 'SalePrice'

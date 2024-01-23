@@ -213,8 +213,6 @@ The dashboard will consist of six pages:
     * Widget checkbox - view dataset
     * Section - correlation study variables and findings
     * Widget checkbox - graphs from correlation study
-    * Section - PPS study findings
-    * Widget checkbox - heatmap from pps study
 
      **PHOTO**
 
