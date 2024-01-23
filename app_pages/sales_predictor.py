@@ -7,10 +7,6 @@ from src.data_management import (
     load_property_data,
     load_pkl_file,
     load_inherited_data)
-from src.evaluate import (
-    regression_performance,
-    regression_evaluation,
-    regression_evaluation_plots)
 
 ## Streamlit warning appears despite using the st.cache_resource command, warning not supressed
 
@@ -18,16 +14,12 @@ def page_sales_predictor():
     st.write("#### 💰 Sales Predictor")
 
     # load the price predictor files
-    
-    
     version = "v1"
     sale_price_prediction = load_pkl_file(
         f"outputs/ml_pipeline/sale_price_prediction/{version}/regression_pipeline.pkl"
     )
     sale_price_vars =(
         pd.read_csv(f"outputs/ml_pipeline/sale_price_prediction/{version}/X_train.csv")
-        .columns
-        .to_list()
     )
 
     # load inherited property data 
