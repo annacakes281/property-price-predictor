@@ -29,12 +29,12 @@ def page_sale_price_study():
     )
     if st.checkbox("Inspect Property Attributes"):
         
-        
         st.write(
             f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns,\n"
-            f"see below for the first 25 rows.\n\n"
+            f"see below for the first 15 rows.\n\n"
+            f"Scroll across to view all rows\n\n"
             f"*Note: All NaN variables have been cleaned*")
-        st.write(df.head(25))
+        st.write(df.head(15))
 
     st.write("---")
 

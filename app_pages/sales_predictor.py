@@ -11,13 +11,14 @@ from src.evaluate import (
     regression_performance,
     regression_evaluation,
     regression_evaluation_plots)
-from src.predict_sales import predict_price
 
+## Streamlit warning appears despite using the st.cache_resource command, warning not supressed
 
 def page_sales_predictor():
     st.write("#### 💰 Sales Predictor")
 
     # load the price predictor files
+    
     
     version = "v1"
     sale_price_prediction = load_pkl_file(
@@ -29,29 +30,76 @@ def page_sales_predictor():
         .to_list()
     )
 
+    # load inherited property data 
+    df = load_inherited_data()
+
     st.write("### Property Price Predictor")
     st.success(
         f"*Business Requirement 2:*\n"
         f"* 2 - The client is interested in predicting the house sale price\n"
         f"from her four inherited houses and any other house in Ames, Iowa.\n"
         f"* The client is also interested in prices of properties\n"
-        f"around the Ames area."
-    )
-    st.info(
-        f"ABOUT THE PREDICTION, WHAT FEATURES, HOW IT WORKS"
-    )
+        f"around the Ames area.")
 
     st.write("---")
 
+    # run price prediction on inherited properties
+    st.write("#### Inherited Property Price")
+
+    st.info(
+        f"The client is interested in predicting the house sale price\n"
+        f"from her four inherited houses and any other house in Ames, Iowa.\n\n"
+        f"**This requirement has been met.**"
+    )
+
+    if st.checkbox("View Inherited Properties"):
+
+        st.write(
+            f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns,\n"
+            f"scroll across to view all rows.\n\n")
+        st.write(df.head())
+
+    if st.checkbox("View Predicted Inherited Property Prices"):
+        st.write(
+            f"We predict the price on the properties using\n"
+            f"the best features found from the pipeline."
+        )
+        df = df.filter(sale_price_vars)
+        price_prediction = sale_price_prediction.predict(df).round(0)
+        df['Predicted Property Price'] = price_prediction
+        st.write(df.head())
+
+        # total sum of properties
+        sum = df['Predicted Property Price'].sum()
+        st.write(
+            f"* The total predicted price of all four\n"
+            f"inherited properties comes to:\n"
+            f"&nbsp;$ {sum}")
+
+
+    st.write("---")
+
+    st.info(
+        f"The client is also interested in prices of properties\n"
+        f"around the Ames area.\n"
+        f"We will use the best features to predict the price.\n"
+        f"**This requirement has been met.**"
+    )
+
+    st.write("#### Predict Property Price")
     # generate the live data
     X_live = DrawInputsWidgets()
 
-    if st.button("Predict Property Price"):
-        sale_price_prediction(X_live, sale_price_vars, sale_price_prediction)
+    # run prediction on properties
+    if st.button("Run Prediction"):
+        price_prediction = sale_price_prediction.predict(
+            X_live.filter(sale_price_vars)).round(0)
 
-        if price_prediction == 1:
-            predict_price(X_live, sale_price_vars, sale_price_prediction)
+        st.write(
+            f"* The predicted property price is: &nbsp;${price_prediction[0]}  \n"
+        )
 
+@st.cache_data(experimental_allow_widgets=True)
 def DrawInputsWidgets():
 
     # load dataset
