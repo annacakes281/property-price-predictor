@@ -91,7 +91,7 @@ Although a ML model can be created, it may not be adequate at predicting propery
 
 
 ## Business Requirements
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+You have been requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
 Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
 
@@ -190,6 +190,7 @@ Although your friend has an excellent understanding of property prices in her ow
 ### MoSCoW Prioritisation
 
 * The project tasks have been broken down into MoSCoW Prioritisation tasks, this can be found here: [MoSCoW Prioritisation](https://github.com/users/annacakes281/projects/6/views/1)
+* Should and Cold have features were not implemented at this time due to time contraints.
 
 ## Dashboard Design
 The dashboard will consist of six pages:
@@ -230,7 +231,8 @@ The dashboard will consist of six pages:
 
 
 ## Unfixed Bugs
-* The only unfixed bug is the *streamlit* warning regarding <code>st.cache is deprecated. Please use one of Streamlit's new caching commands, st.cache_data or st.cache_resource.</code> despite the commands being used, the warning does not disappear.
+* One unfixed bug is the *streamlit* warning regarding <code>st.cache is deprecated. Please use one of Streamlit's new caching commands, st.cache_data or st.cache_resource.</code> despite the commands being used, the warning does not disappear.
+* Another bug noticed after deployment and not fixed due to time constraints and a struggle with getting project deployed with under 500mb slug is that any *years* show up with a comma.
 
 
 ## Deployment
@@ -252,23 +254,27 @@ The dashboard will consist of six pages:
 ## Main Data Analysis and Machine Learning Libraries
 Below are the libraries that I used for the project, taken from *requirements.txt*
 
-* numpy==1.18.5
-* pandas==1.4.2
-* matplotlib==3.3.1
-* seaborn==0.11.0
-* ydata-profiling==4.4.0
-* plotly==4.12.0
-* ppscore==1.2.0
+* numpy==1.23.5
+* pandas==1.5.3
+* matplotlib==3.7.2
+* seaborn==0.12.2
+* ydata-profiling==4.5.1
+* plotly== 5.11.0
+* ppscore==1.3.0
 
-* feature-engine==1.0.2
-* imbalanced-learn==0.8.0
-* scikit-learn==0.24.2
-* xgboost==1.2.1
-* ipywidgets==8.0.2
+* feature-engine==1.6.1
+* imbalanced-learn==0.10.0
+* scikit-learn==1.3.0
+* xgboost==1.7.6
+* Jinja2==3.1.2
+* MarkupSafe==2.1.3
+
+* ipywidgets==8.0.6
+* altair==5.0.1
 
 To create the dashboard:
-* protobuf==3.20
-* streamlit==1.23.0
+* protobuf==4.24.1
+* streamlit==1.25.0
 
 ## Credits 
 

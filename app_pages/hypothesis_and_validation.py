@@ -25,7 +25,7 @@ def page_hypothesis_and_validation():
         f"  * To validate this, we will do an correlation study,\n"
         f"as well assess the best features against sales price.\n\n"
         f"**Conclusions:**\n\n"
-        f"From the correlation studies and assessing to find the\n"
+        f"* From the correlation studies and assessing to find the\n"
         f"best features, it was confirmed that *size*, quality,\n"
         f"and *year* all have a positive impact on sale price."
     )
