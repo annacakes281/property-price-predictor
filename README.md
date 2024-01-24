@@ -1,7 +1,7 @@
 # PPP: Property Price Predictor
 
 ### About
-Propery Price Predictor (PPP) is a Machine Learning tool that can help users to predict the sale prices of properties by taking the properties features as inputs. Currently this tool will only predict prices on properties within *Ames, Iowa*.
+[Propery Price Predictor](https://property-price-predictor-am-c6b2e55483b8.herokuapp.com/) (PPP) is a Machine Learning tool that can help users to predict the sale prices of properties by taking the properties features as inputs. Currently this tool will only predict prices on properties within *Ames, Iowa*.
 
 The app was created to help the client:
 * View how the attributes of a property correlate to the sale price.
@@ -236,7 +236,7 @@ The dashboard will consist of six pages:
 ## Deployment
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/
+* The App live link is: [Property Price Predictor](https://property-price-predictor-am-c6b2e55483b8.herokuapp.com/)
 * Ensure: Procfile says <code>web: sh setup.sh && streamlit run app.py</code>
 * Runtime: python-3.8.17
 
@@ -252,15 +252,19 @@ The dashboard will consist of six pages:
 ## Main Data Analysis and Machine Learning Libraries
 Below are the libraries that I used for the project, taken from *requirements.txt*
 
-* feature-engine==1.6.2 - to perform feature engineering
-* matplotlib==3.7.4 - to produce plot charts
-* matplotlib-inline==0.1.6 - so that charts would appear
-* numpy==1.24.4 - for analysis
-* pandas==1.5.3 - for analysis
-* plotly==5.18.0 - to plot charts
-* ppscore==1.3.0 - to conduct a pps study
-* scikit-learn==1.3.2 - for feature engineering
-* seaborn==0.13.1 - for analysis
+* numpy==1.18.5
+* pandas==1.4.2
+* matplotlib==3.3.1
+* seaborn==0.11.0
+* ydata-profiling==4.4.0
+* plotly==4.12.0
+* ppscore==1.2.0
+
+* feature-engine==1.0.2
+* imbalanced-learn==0.8.0
+* scikit-learn==0.24.2
+* xgboost==1.2.1
+* ipywidgets==8.0.2
 
 To create the dashboard:
 * protobuf==3.20.1
@@ -298,4 +302,4 @@ To create the dashboard:
 
 ## Acknowledgements
 * I would like to thank my mentor, Precious, for his support for when I decided to change my idea due to the data not being sufficent enough and for answering all my questions when needed.
-
+* I would also like to thank the slack community for answering questions.
