@@ -8,10 +8,3 @@ node_modules/
 .github/
 cloudinary_python.txt
 kaggle.json
-
-
-__pycache__
-inputs/datasets/raw
-outputs/datasets/collection/HousePriceRecords.csv
-outputs/datasets/cleaned/TestSetCleaned.csv
-outputs/datasets/cleaned/TrainSetCleaned.csv
