@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style("whitegrid")
 
-## Streamlit warning appears despite using the st.cache command,
-## downgraded versions to upload project within slug size.
+## Streamlit warning appears unable to use command,
+# downgraded versions to upload project within slug size.
 
 def page_sale_price_study():
     st.write("#### 🏡 Property Sale Price Study")
@@ -66,7 +66,7 @@ def page_sale_price_study():
         )
 
 # cache decoder
-@st.cache
+
 def sale_price_per_var(df_eda, vars_to_study):
     # function based on sale price study notebook
     target_var = 'SalePrice'
@@ -75,7 +75,7 @@ def sale_price_per_var(df_eda, vars_to_study):
         st.write("\n\n")
 
 # cache decoder
-@st.cache
+
 def plot_numerical(df, col, target_var):
     # function based on sale price study notebook
     fig, axes = plt.subplots(figsize=(15, 8))
