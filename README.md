@@ -267,8 +267,8 @@ Below are the libraries that I used for the project, taken from *requirements.tx
 * ipywidgets==8.0.2
 
 To create the dashboard:
-* protobuf==3.20.1
-* streamlit==1.30.0
+* protobuf==3.20
+* streamlit==1.23.0
 
 ## Credits 
 

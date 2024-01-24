@@ -36,6 +36,7 @@ def page_project_summary():
 
     # checkbox to view dataset
     if st.checkbox("View Dataset"):
+        st.write(f"**Expand to view whole dataset.**")
         df = pd.DataFrame(
         [
         {"Variable": "1stFlrSF", 
@@ -134,9 +135,7 @@ def page_project_summary():
         "Meaning": "Sale Price", 
         "Units": "34900-755000"},
     ])
-
-        # this hides the indes and allows the table column width to be expanded and decreased
-        df = st.data_editor(df, hide_index=True, use_container_width=True)
+        st.write(df)
 
     # link to readme
     st.write(

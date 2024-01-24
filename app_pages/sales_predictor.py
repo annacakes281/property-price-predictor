@@ -3,10 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import date
-from src.data_management import (
-    load_property_data,
-    load_pkl_file,
-    load_inherited_data)
+from src.data_management import load_property_data, load_pkl_file, load_inherited_data
 
 ## Streamlit warning appears unable to use command,
 # downgraded versions to upload project within slug size.
@@ -21,6 +18,8 @@ def page_sales_predictor():
     )
     sale_price_vars =(
         pd.read_csv(f"outputs/ml_pipeline/sale_price_prediction/{version}/X_train.csv")
+        .columns()
+        .to_list()
     )
 
     # load inherited property data 
