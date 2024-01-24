@@ -280,6 +280,8 @@ To create the dashboard:
 
 ### Content 
 
+- CI [Hertitage Housing Template](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues) used
+
 - The projects steps were dependant on following the Code Institue [Churnometer](https://github.com/Code-Institute-Solutions/churnometer) practice project
 - I relied on the following Code Institue lessons for code as well:
     * [Feature Engineering: Handle Missing Data](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/1f851533cd6a4dcd8a280fd9f37ef4e2/bb0bf41fb8744b46813c0f52a74b9b11/)
