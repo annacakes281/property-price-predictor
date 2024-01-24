@@ -135,7 +135,7 @@ def page_project_summary():
         "Meaning": "Sale Price", 
         "Units": "34900-755000"},
     ])
-        st.write(df)
+        df = st.data_editor(df, hide_index=True, use_container_width=True)
 
     # link to readme
     st.write(

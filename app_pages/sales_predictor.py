@@ -18,8 +18,6 @@ def page_sales_predictor():
     )
     sale_price_vars =(
         pd.read_csv(f"outputs/ml_pipeline/sale_price_prediction/{version}/X_train.csv")
-        .columns()
-        .to_list()
     )
 
     # load inherited property data 
