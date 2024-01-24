@@ -71,14 +71,14 @@ def page_sales_predictor():
 
     st.write("---")
 
-    st.info(
-        f"The client is also interested in prices of properties\n"
-        f"around the Ames area.\n"
-        f"We will use the best features to predict the price.\n"
-        f"**This requirement has been met.**"
-    )
-
     st.write("#### Predict Property Price")
+    
+    st.info(
+    f"The client is also interested in prices of properties\n"
+    f"around the Ames area.\n"
+    f"We will use the best features to predict the price.\n"
+    f"**This requirement has been met.**"
+    )
     # generate the live data
     X_live = DrawInputsWidgets()
 

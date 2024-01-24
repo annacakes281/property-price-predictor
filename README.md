@@ -172,25 +172,30 @@ Although your friend has an excellent understanding of property prices in her ow
 ### Milestones
 8 milestones were created for this project:
 
+* Epic 1: Information Gathering & Data Collection - *closed*
+* Epic 2: Data Visualisation, Cleaning, & Preparation - *closed*
+* Epic 3: Model Training, Optimisation, & Validation - *closed
+* Epic 4: Dashboard Planning, Designing, & Development - *closed*
+* Epic 5: Dashboard Deployment & Release - *closed*
+* User Stories - *closed*
+* Admin - *closed*
+* Should Have & Could Have Features - *open* (this is not important for the project)
 
-
-View [Milestones](https://github.com/annacakes281/heritage-housing-issues/milestones?state=closed)
+**View [Milestones](https://github.com/annacakes281/heritage-housing-issues/milestones?state=closed)**
 
 ### User Stories and Epics
 
-View [User Stories and Epics](https://github.com/users/annacakes281/projects/5/views/1)
+* The user stories and epics have been compied into a project board to make it easier to see what needs to be done, this can be viewed here : [User Stories and Epics](https://github.com/users/annacakes281/projects/5/views/1)
 
 ### MoSCoW Prioritisation
 
-View [MoSCoW Prioritisation](https://github.com/users/annacakes281/projects/6/views/1)
+* The project tasks have been broken down into MoSCoW Prioritisation tasks, this can be found here: [MoSCoW Prioritisation](https://github.com/users/annacakes281/projects/6/views/1)
 
 ## Dashboard Design
 The dashboard will consist of six pages:
 1. Homepage:
     * Section - welcome message and what can be found 
     * Sidebar - access to other pages, avaliable on all pages
-
-   <img src="readme_images/homepage.png" style="width:1000px;">
 
 2. Project Summary:
     * Section - background information
@@ -200,13 +205,8 @@ The dashboard will consist of six pages:
     * Link to README
     * Section - business Requirements
 
-    <img src="readme_images/project_summary.png" style="height:500px;">
-    <img src="readme_images/view_dataset_sum.png" style="height:500px;">
-
 3. Hypothesis and Validation
     * Section - the hypothesis and validation
-
-    <img src="readme_images/hypothesis_validation.png" style="height:500px;">
 
 4. Propery Sale Price Study:
     * Section - sale price study and business requirement 1
@@ -214,28 +214,24 @@ The dashboard will consist of six pages:
     * Section - correlation study variables and findings
     * Widget checkbox - graphs from correlation study
 
-     **PHOTO**
-
 5. Sales Predictor:
     * Section - business requirement 2
-    * Section - R2 Score performance
-    * Widget checkbox - inherited properties predicted prices
-    * Widget checkbox - allows users to input selected variables to predict price and output
-
-    **PHOTO**
+    * Section - inherited property price
+    * Widget checkbox - inherited properties
+    * Widget checkbox - inherited property predicted prices
+    * Section - predict property price
+    * Widgets - allows users to input selected variables to predict price and output
 
 6. ML Model:
     * Section - about the regressor model and R2 score
     * Section - pipeline steps
-    * TBD - best features and importance
-    * TBD - pipeline performance train set
-    * TBD - pipeline performance test set
-
-    **PHOTO**
+    * Section - best features and importance
+    * Section - model evaluation
 
 
 ## Unfixed Bugs
-* TBD
+* The only unfixed bug is the *streamlit* warning regarding <code>st.cache is deprecated. Please use one of Streamlit's new caching commands, st.cache_data or st.cache_resource.</code> despite the commands being used, the warning does not disappear.
+
 
 ## Deployment
 ### Heroku
